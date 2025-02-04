@@ -1,23 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
     <title>JackedBox Games</title>
-    <script type="module" src="./src/user-interface.mts"></script>
   </head>
   <body>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: #000;
-        color: #fff;
-        font-family: Arial, sans-serif;
-      }
-    </style>
-    <!-- USER OVERLAY -->
-    <user-interface></user-interface>
-    <!-- GAME OVERLAY -->
-    <script type="module" src="./src/main.js"></script>
+    <div id="root" class="ui" tag="main_ui"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
