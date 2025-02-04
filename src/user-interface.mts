@@ -23,3 +23,27 @@ export class UserInterface extends LitElement {
     `;
   }
 }
+
+let menu = document.querySelectorAll("[toggle]");
+menu.forEach((button) => {
+  button.addEventListener("click", () => {
+    let target = button.getAttribute("toggle");
+    openMenu(target);
+  });
+});
+
+window.addEventListener("keydown", (e) => {
+  console.log(e);
+  switch (e.key) {
+    case "Escape":
+      console.log(
+        "Escape Pressed pause menu",
+        document.getElementById("main__menu")
+      );
+  }
+});
+
+function openMenu(target) {
+  let menu = document.getElementById(target);
+  menu.classList.toggle("hidden");
+}
