@@ -1,0 +1,26 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#ui {
+  position: fixed;
+  color: white;
+  left: 50px;
+  top: 25px;
+}
+.menu {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+.menu__full {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  z-index: 99;
+  top: 10%;
+  left: 10%;
+  background-color: pink;
+}
