@@ -5,7 +5,7 @@ import { customElement } from "lit/decorators.js";
 export class UserInterface extends LitElement {
   render() {
     return html`
-      <link rel="stylesheet" href="/style.css" />
+      <link rel="stylesheet" href="./src/style.css" />
       <div id="ui">
         <button
           toggle="main__menu"
@@ -27,8 +27,7 @@ export class UserInterface extends LitElement {
 let menu = document.querySelectorAll("[toggle]");
 menu.forEach((button) => {
   button.addEventListener("click", () => {
-    let target = button.getAttribute("toggle");
-    openMenu(target);
+    // let target = button.getAttribute("toggle");
   });
 });
 
@@ -42,8 +41,3 @@ window.addEventListener("keydown", (e) => {
       );
   }
 });
-
-function openMenu(target) {
-  let menu = document.getElementById(target);
-  menu.classList.toggle("hidden");
-}
