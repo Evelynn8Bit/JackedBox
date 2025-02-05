@@ -1,15 +1,18 @@
 import { createRoot } from "react-dom/client";
-import { Canvas } from "@react-three/fiber";
 import "./main.css";
-function App() {
+import App from "./App";
+import { Leva } from "leva";
+import { StrictMode } from "react";
+
+function Main() {
   return (
-    <Canvas className="canvas">
-      <mesh>
-        <boxGeometry args={[1, 1, 1]} />
-        <meshBasicMaterial color="hotpink" />
-      </mesh>
-    </Canvas>
+    <StrictMode>
+      <>
+        <Leva />
+        <App />
+      </>
+    </StrictMode>
   );
 }
 
-createRoot(document.getElementById("root")).render(<App />);
+createRoot(document.getElementById("root")).render(<Main />);
