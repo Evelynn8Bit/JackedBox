@@ -9,10 +9,7 @@ I jacked the idea from jackbox games, thus I jackedjackbox games, but thats over
 ## Tools
 
 - vite
-- tailwindcss
-- Shadcn/ui
-- threejs
-- react
+- react-three-fibers
 - sqllite3 -> maybe mongo DB
 
 ## TODO
