@@ -10,6 +10,7 @@ I jacked the idea from jackbox games, thus I jackedjackbox games, but thats over
 
 - vite
 - tailwindcss
+- Shadcn/ui
 - threejs
 - react
 - sqllite3 -> maybe mongo DB
