@@ -6,10 +6,10 @@ export const UI = () => {
         <h2>Other</h2>
         <div className="menu__item-content">Content</div>
       </MenuPannel>
-      <MenuPannel id={"user"} className="full collpase-y">
+      <MenuPannel id={"user"} className="full collapse-y">
         <div className="profile">
           <div className="pfp"></div>
-          <h2>{user ?? null}</h2>
+          <h2>Hi</h2>
         </div>
         <div className="menu__item-content">Content</div>
       </MenuPannel>
