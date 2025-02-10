@@ -36,23 +36,30 @@ main#UI {
   padding: 10px;
   height: 100%;
 }
+.menu__item
 .menu__item.half {
   width: 200px;
 }
 .menu__item.full {
   width: 400px;
 }
-.menu__item-content {
+.menu__item--content {
   background-color: aqua;
-  transition: all 300ms;
   height: 100%;
+  .menu__item--content--title {
+    color: black;
+    font-weight: bold;
+  }
 }
 .menu__item[toggled="true"].collapse-x {
   width: 50px;
+  .menu__item--title {
+  color: transparent;
+}
 }
 .menu__item[toggled="true"].collapse-y {
   height: 50px;
-  .menu__item-content {
+  .menu__item--content {
     opacity: 0;
     height: 0;
   }
