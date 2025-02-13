@@ -112,9 +112,9 @@ function App() {
     <>
       <UI />
 
-      {/* <Canvas shadows className="canvas">
+      <Canvas shadows className="canvas">
         <Scene />
-      </Canvas> */}
+      </Canvas>
     </>
   );
 }
