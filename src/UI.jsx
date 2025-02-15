@@ -3,7 +3,7 @@ export const UI = () => {
   return (
     <main id="UI">
       <MenuPannel id={"other"} className="half collapse-x">
-        <h2 class="menu__item--title">Other</h2>
+        <h2 className="menu__item--title">Other</h2>
         <div className="menu__item--content">Content</div>
       </MenuPannel>
       <MenuPannel id={"user"} className="full collapse-y">
