@@ -16,8 +16,8 @@ type Todo struct {
 var todos = []Todo{}
 func main() {
 	fmt.Println("Hello, World! This is Ev")
-	app:= fiber.New()
-
+	app := fiber.New()
+	
 	err := godotenv.Load(".env")
 	if err != nil {
 		log.Fatal("Error loading .env file")
