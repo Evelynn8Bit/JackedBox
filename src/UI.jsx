@@ -1,6 +1,8 @@
+import { Toaster } from "react-hot-toast";
 import { MenuPannel } from "./MenuPannel";
 import { AccountActions } from "./components/auth/header/AccountActions";
 import { AuthProvider } from "./contexts/authContext";
+import { UserProfile } from "./components/UserProfile";
 export const UI = () => {
   return (
     <main id="UI">
@@ -14,12 +16,9 @@ export const UI = () => {
       <MenuPannel id={"user"} className="fold-slide collapse-y">
         <AuthProvider>
           <AccountActions />
+          <Toaster position="top-center" />
+          <UserProfile />
         </AuthProvider>
-        <div className="profile">
-          <div className="pfp"></div>
-          <h2 className="menu__item--title">Hi</h2>
-        </div>
-        <div className="menu__item--content">Content</div>
       </MenuPannel>
     </main>
   );

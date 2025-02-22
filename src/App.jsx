@@ -111,7 +111,6 @@ function App() {
   return (
     <>
       <UI />
-
       <Canvas shadows className="canvas">
         <Scene />
       </Canvas>

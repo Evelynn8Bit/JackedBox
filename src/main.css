@@ -22,9 +22,6 @@ input,
 lable {
   display: block;
 }
-h1 {
-  color: white;
-}
 main#UI {
   --window-pd: 50px;
   position: fixed;
