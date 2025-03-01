@@ -7,6 +7,17 @@
   --br-lg: 10px;
   --br-md: 5px;
   --br-full: 50%;
+  --c-primary: #ec0b43;
+}
+.pink {
+  background-color: pink;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
 }
 #root {
   width: 100vw;
@@ -17,6 +28,9 @@
 }
 #leva__root {
   display: none;
+}
+button {
+  cursor: pointer;
 }
 input,
 lable {
@@ -31,23 +45,96 @@ main#UI {
   height: calc(100% - var(--window-pd));
   width: calc(100% - var(--window-pd));
 }
+.fixed-top {
+  position: absolute;
+  right: 10px;
+}
+.login__button {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  place-content: center left;
+  background-color: pink;
+}
+.grid {
+  display: grid;
+}
 .menu__item {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 10px;
   border: 1px solid black;
   background-color: white;
   border-radius: var(--br-md);
   transition: all 200ms;
-  padding: 10px;
+  cursor: pointer;
+}
+
+/* Closed side Menus */
+.menu__item[toggled="false"].menu__item.fold-slide {
+  width: 400px;
+  height: 600px;
+
+  .user__profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    > * {
+      transition: all 200ms;
+    }
+    .pfp {
+      height: 100px;
+      width: 100px;
+    }
+    .edit-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    button {
+      background-color: transparent;
+      border: none;
+      color: black;
+    }
+    button:hover {
+      color: var(--c-primary);
+      text-decoration: underline;
+    }
+  }
+  button {
+    display: block;
+  }
+}
+.menu__item[toggled="false"].menu__item.fold-half {
+  width: 200px;
   height: 100%;
 }
-.menu__item .menu__item.fold-half {
-  width: 200px;
+
+/* Open Side Menus */
+.menu__item[toggled="true"].menu__item.fold-half {
+  width: 50px;
+  .menu__item--title {
+    color: transparent;
+  }
 }
-.menu__item.fold-slide {
+.menu__item[toggled="true"].menu__item.fold-slide {
+  height: 60px;
   width: 400px;
+  .menu__item--content {
+    opacity: 0;
+    height: 0;
+  }
+  .user__profile {
+    display: flex;
+    gap: 10px;
+  }
+  button {
+    display: none;
+  }
 }
+
 .modal {
   position: fixed;
   z-index: 3;
@@ -67,24 +154,12 @@ main#UI {
   padding: 20px;
 }
 .menu__item--content {
-  background-color: aqua;
+  /* For Debugging */
+  /* background-color: aqua; */
   height: 100%;
   .menu__item--content--title {
     color: black;
     font-weight: bold;
-  }
-}
-.menu__item[toggled="true"].collapse-x {
-  width: 50px;
-  .menu__item--title {
-    color: transparent;
-  }
-}
-.menu__item[toggled="true"].collapse-y {
-  height: 50px;
-  .menu__item--content {
-    opacity: 0;
-    height: 0;
   }
 }
 .profile {
@@ -93,8 +168,31 @@ main#UI {
   align-items: center;
 }
 .pfp {
-  height: 30px;
-  width: 30px;
+  height: 45px;
+  width: 45px;
   border-radius: var(--br-full);
-  background-color: aqua;
+  position: relative;
+  bottom: 0;
+}
+.menu__item-user--actions {
+  display: flex;
+  flex-direction: column;
+
+  button {
+    background: transparent;
+    border: none;
+    padding: 1.5rem 0.75rem;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 2rem;
+  }
+  button + button {
+    border-top: 1px solid whitesmoke;
+  }
+  button:hover {
+    color: var(--c-primary);
+    background-color: whitesmoke;
+    border-left: 5px solid var(--c-primary);
+  }
 }
