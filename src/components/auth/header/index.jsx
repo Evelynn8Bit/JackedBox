@@ -8,10 +8,13 @@ export const Login = () => {
   const [openModal, setOpenModal] = useState(null);
 
   return (
-    <div className="grid pink">
+    <div className="pink">
       <button
         className="login__button"
-        onClick={() => setOpenModal("login")}>
+        onClick={(e) => {
+          e.stopPropagation();
+          setOpenModal("login")
+        }}>
         Login
       </button>
       <Modal
@@ -47,7 +50,10 @@ export const Logout = () => {
     <div className="fixed-top">
       <button onClick={() => console.log(currentUser)}>Current user</button>
       <>
-        <button onClick={() => setOpenModal("logout")}>Logout</button>
+        <button onClick={(e) => {
+          e.stopPropagation();
+          setOpenModal("logout")
+        }}>Logout</button>
         <Modal
           isOpen={openModal === "logout"}
           onClose={() => setOpenModal(null)}>

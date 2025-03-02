@@ -3,6 +3,7 @@ import { AuthProvider } from "./contexts/authContext";
 import { Toaster } from "react-hot-toast";
 
 export const MenuPannel = ({ id, toggled, className, children }) => {
+  //toggled true means window is closed
   const [isOpen, toggleOpen] = useState(toggled ?? true);
 
   const toggle = () => {
@@ -16,7 +17,10 @@ export const MenuPannel = ({ id, toggled, className, children }) => {
       toggled={isOpen.toString()}
       ref={menu}
       className={className + " menu__item"}
-      onClick={toggle}>
+      onClick={() => {
+        toggle();
+      }
+      }>
       <AuthProvider>
         <Toaster
           position="top-center"
